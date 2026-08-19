@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>APTIS | Phishing Threat Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">◈</div>
+
+            <div>
+                <h2>APTIS</h2>
+                <span>Adaptive Phishing Intelligence</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#scanner">Scanner</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            SYSTEM ONLINE
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="scanner">
+
+            <div class="hero-badge">
+                <span>●</span> AI-POWERED THREAT DETECTION
+            </div>
+
+            <h1>
+                Detect Phishing.<br>
+                <span>Before It Strikes.</span>
+            </h1>
+
+            <p class="hero-description">
+                Analyze suspicious URLs using machine learning and
+                identify potential phishing threats in seconds.
+            </p>
+
+
+            <div class="scanner-card">
+
+                <div class="scanner-header">
+
+                    <div>
+                        <span class="section-label">URL THREAT SCANNER</span>
+                        <h3>Analyze a suspicious URL</h3>
+                    </div>
+
+                    <div class="model-badge">
+                        <span></span>
+                        XGBoost Engine
+                    </div>
+
+                </div>
+
+
+                <div class="url-input-wrapper">
+
+                    <div class="input-icon">↗</div>
+
+                    <input
+                        type="text"
+                        id="urlInput"
+                        placeholder="https://example.com"
+                        autocomplete="off"
+                    >
+
+                    <button id="analyzeButton">
+                        <span>ANALYZE URL</span>
+                        <span class="button-arrow">→</span>
+                    </button>
+
+                </div>
+
+                <div id="errorMessage" class="error-message"></div>
+
+                <div class="scanner-footer">
+                    <span>⚡ Real-time ML analysis</span>
+                    <span>•</span>
+                    <span>22 URL features analyzed</span>
+                    <span>•</span>
+                    <span>98.14% model accuracy</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="resultSection" class="results-section hidden">
+
+            <div class="result-header">
+
+                <div>
+                    <span class="section-label">ANALYSIS RESULT</span>
+                    <h2>Threat Assessment</h2>
+                </div>
+
+                <span id="resultTime"></span>
+
+            </div>
+
+
+            <div class="result-grid">
+
+                <div class="result-card verdict-card">
+
+                    <div class="card-top">
+                        <span class="card-label">VERDICT</span>
+                        <div id="verdictIcon" class="verdict-icon">✓</div>
+                    </div>
+
+                    <h3 id="verdictText">LEGITIMATE</h3>
+
+                    <p id="verdictDescription">
+                        This URL appears to be legitimate.
+                    </p>
+
+                </div>
+
+
+                <div class="result-card risk-card">
+
+                    <div class="card-top">
+                        <span class="card-label">RISK SCORE</span>
+                        <span id="riskLevel">LOW</span>
+                    </div>
+
+                    <div class="risk-display">
+
+                        <div class="risk-number">
+                            <span id="riskScore">0</span>
+                            <small>/100</small>
+                        </div>
+
+                        <div class="risk-bar">
+                            <div id="riskBar"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="result-card probability-card">
+
+                    <div class="card-top">
+                        <span class="card-label">PHISHING PROBABILITY</span>
+                    </div>
+
+                    <div class="probability-number">
+                        <span id="probability">0</span>%
+                    </div>
+
+                    <p>Model confidence for phishing classification</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="url-result-card">
+
+                <div class="url-result-header">
+                    <span class="card-label">ANALYZED URL</span>
+                </div>
+
+                <div id="analyzedUrl" class="analyzed-url"></div>
+
+            </div>
+
+
+            <div class="analysis-grid">
+
+                <div class="analysis-card">
+
+                    <div class="analysis-title">
+                        <div class="title-icon">◉</div>
+
+                        <div>
+                            <span class="card-label">MODEL ANALYSIS</span>
+                            <h3>Detection Engine</h3>
+                        </div>
+                    </div>
+
+                    <div class="analysis-row">
+                        <span>Model</span>
+                        <strong>XGBoost</strong>
+                    </div>
+
+                    <div class="analysis-row">
+                        <span>Features analyzed</span>
+                        <strong>22</strong>
+                    </div>
+
+                    <div class="analysis-row">
+                        <span>Model accuracy</span>
+                        <strong>98.14%</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="analysis-card">
+
+                    <div class="analysis-title">
+                        <div class="title-icon">⌁</div>
+
+                        <div>
+                            <span class="card-label">THREAT STATUS</span>
+                            <h3>Security Assessment</h3>
+                        </div>
+                    </div>
+
+                    <div id="securityStatus" class="security-status">
+                        <span>✓</span>
+                        <div>
+                            <strong>Low Risk</strong>
+                            <p>No significant phishing indicators detected.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="how-section" id="how-it-works">
+
+            <div class="section-heading">
+
+                <span class="section-label">THE PROCESS</span>
+
+                <h2>How APTIS Works</h2>
+
+                <p>
+                    From raw URL to intelligent threat assessment
+                    through a machine-learning pipeline.
+                </p>
+
+            </div>
+
+
+            <div class="process-grid">
+
+                <div class="process-card">
+                    <div class="process-number">01</div>
+                    <h3>URL Input</h3>
+                    <p>
+                        The system receives the URL submitted for analysis.
+                    </p>
+                </div>
+
+                <div class="process-line"></div>
+
+                <div class="process-card">
+                    <div class="process-number">02</div>
+                    <h3>Feature Extraction</h3>
+                    <p>
+                        22 structural and statistical URL characteristics
+                        are extracted.
+                    </p>
+                </div>
+
+                <div class="process-line"></div>
+
+                <div class="process-card">
+                    <div class="process-number">03</div>
+                    <h3>ML Analysis</h3>
+                    <p>
+                        The XGBoost model analyzes the extracted features.
+                    </p>
+                </div>
+
+                <div class="process-line"></div>
+
+                <div class="process-card">
+                    <div class="process-number">04</div>
+                    <h3>Threat Verdict</h3>
+                    <p>
+                        The system returns a classification and risk score.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="stats-section" id="about">
+
+            <div class="stat">
+                <strong>116K+</strong>
+                <span>URLs in Dataset</span>
+            </div>
+
+            <div class="stat">
+                <strong>22</strong>
+                <span>URL Features</span>
+            </div>
+
+            <div class="stat">
+                <strong>98.14%</strong>
+                <span>Model Accuracy</span>
+            </div>
+
+            <div class="stat">
+                <strong>91.20%</strong>
+                <span>Phishing Recall</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div>APTIS — Adaptive Phishing Threat Intelligence System</div>
+        <div>Machine Learning Security Analysis</div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

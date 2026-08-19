@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Environment / secrets
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# ML training artifacts
+data/models/xgboost.pkl
+data/models/svm.pkl
+data/models/decision_tree.pkl
+data/models/logistic_regression.pkl
+data/models/random_forest.pkl
+
+data/processed/X_train_scaled.pkl
+data/processed/X_test_scaled.pkl
+data/processed/y_train.pkl
+data/processed/y_test.pkl
+
+# Raw datasets
+data/raw/
